@@ -1,11 +1,13 @@
 /**
- * Name:
+ * Name: Farzad Hasan
  * Mrs. Kankelborg
- * Period 
+ * Period 1
  * Project 2 Recursive Art Project Part 2: Sierpinski 
- * Last Updated:
+ * Last Updated: 10/16/2023
  * 
  * Class Description:
+ * This class will generate a Sierpinski triangle pattern which will recursively generate
+ * triangles on a scale n times.
  */
 
 public class Sierpinski {

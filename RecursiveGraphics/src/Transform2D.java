@@ -1,11 +1,13 @@
 /**
- * Name:
+ * Name: Farzad Hasan
  * Mrs. Kankelborg
- * Period 
+ * Period 1
  * Project 2 Recursive Art Project Part 1: Transform2D
- * Last Updated:
+ * Last Updated: 10/16/2023
  * 
  * Class Description:
+ * We will write this library to utilize basic transformations and apply them on drawings
+ * in other parts of this project.
  */
 
 public class Transform2D {

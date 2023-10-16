@@ -1,12 +1,14 @@
 /**
  * <pre>
- * Name:
+ * Name: Farzad Hasan
  * Mrs. Kankelborg
- * Period
+ * Period 1
  * Project 2 Recursive Art Project Part 3: Art
- * Revision History:
+ * Revision History: 10/16/2023
  *
  * Class Description:
+ * This will be my own creative art project which utilizes recursion to generate unique patterns
+ * which cannot be done with simple looping or iteration.
  * </pre>
  */
 
