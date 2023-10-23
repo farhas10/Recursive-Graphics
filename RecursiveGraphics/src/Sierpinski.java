@@ -38,15 +38,26 @@ public class Sierpinski {
 	 */
     private static double height(double length)
     {
-    	return 0.0;
+    	//Since the triangle is equilateral, the lengths are the same. 
+    	//To find height, use the mathematical formula for height.
+    	double h = Math.sqrt(3) / 2 * length;
+    	return h;
     }
 
     /**
      * Draws a filled equilateral triangle whose bottom vertex is (x, y) and whose sides
      * are of the specified length.
      */
-    private static void filledTriangle(double x, double y, double length)
+    public static void filledTriangle(double x, double y, double length)
     {
+    	//3 possible X coordinates since it is a triangle
+    	//One is half the length from the center, one at the center, one is a positive half length
+    	//from the center.
     	
+    	//3 possible Y Coordinates from the center.
+    	//Two from height + vertex and one at the vertex.
+    	double xCoords[] = {x-(length/2), x, x + (length/2)};
+    	double yCoords[] = {y + height(length), y, y + height(length)};
+    	StdDraw.filledPolygon(xCoords, yCoords);
     } 
 }

@@ -6,6 +6,7 @@ public class SierpinskiRunner
     public static void main(String[] args)
     {
         openingCredits();
+        
         Sierpinski.sierpinski(1);
         waitToAdvance();
         Sierpinski.sierpinski(3);
