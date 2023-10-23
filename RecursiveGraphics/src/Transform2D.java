@@ -62,12 +62,12 @@ public class Transform2D {
 		double cosRot = Math.cos(Math.toRadians(theta));
 		double sinRot = Math.sin(Math.toRadians(theta));
 		
+		//Copy array to manipulate the angled points.
 		double [] x0 = copy(x);
 		double[] y0 = copy(y);
 		//Loops through each value to calculate the new X and Y by subtracting or adding
 		//sine and cosine values.
 		for (int i = 0; i < x.length; i++) {
-		
 		x[i] = (cosRot * x0[i]) - (sinRot * y0[i]);
 		y[i] = (sinRot * x0[i]) + (cosRot * y0[i]);
 		}
