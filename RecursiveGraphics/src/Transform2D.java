@@ -67,8 +67,8 @@ public class Transform2D {
 		for (int i = 0; i < x.length; i++) {
 		double x0 = x[i];
 		double y0 = y[i];
-		x[i] = (cosRot * x0) - (sinRot * x0);
-		y[i] = (sinRot * y0) + (cosRot * y0);
+		x[i] = (cosRot * x0) - (sinRot * y0);
+		y[i] = (sinRot * x0) + (cosRot * y0);
 		}
 	}
 	
