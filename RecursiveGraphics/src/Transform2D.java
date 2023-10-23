@@ -19,7 +19,7 @@ public class Transform2D {
 	public static double[] copy(double[] array) 
 	{
 		//Simply clones the array and returns it in the form of a new array.
-		double [] arrayCopy = array;
+		double [] arrayCopy = array.clone();
 		return arrayCopy;
 	}
 	
@@ -59,17 +59,16 @@ public class Transform2D {
 	{
 		
 		//Calculates appropriate values for cos and sin of theta by converting from angle to rads.
-		double cosRot = Math.cos(Math.toRadians(theta));
-		double sinRot = Math.sin(Math.toRadians(theta));
+		theta = Math.toRadians(theta);
 		
 		//Copy array to manipulate the angled points.
-		double [] x0 = copy(x);
-		double[] y0 = copy(y);
+		double x0[] = copy(x);
+		double y0[] = copy(y);
 		//Loops through each value to calculate the new X and Y by subtracting or adding
 		//sine and cosine values.
 		for (int i = 0; i < x.length; i++) {
-		x[i] = (cosRot * x0[i]) - (sinRot * y0[i]);
-		y[i] = (sinRot * x0[i]) + (cosRot * y0[i]);
+		x[i] = (Math.cos(theta) * x0[i]) - (Math.sin(theta) * y0[i]);
+		y[i] = (Math.sin(theta) * x0[i]) + (Math.cos(theta) * y0[i]);
 		}
 	}
 	
