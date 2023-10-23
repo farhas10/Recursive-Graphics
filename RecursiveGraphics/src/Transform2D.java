@@ -3,7 +3,7 @@
  * Mrs. Kankelborg
  * Period 1
  * Project 2 Recursive Art Project Part 1: Transform2D
- * Last Updated: 10/16/2023
+ * Last Updated: 10/20/2023
  * 
  * Class Description:
  * We will write this library to utilize basic transformations and apply them on drawings
@@ -18,8 +18,9 @@ public class Transform2D {
 	 */
 	public static double[] copy(double[] array) 
 	{
-		
-		return null;
+		//Simply clones the array and returns it in the form of a new array.
+		double [] arrayCopy = array;
+		return arrayCopy;
 	}
 	
 	/**
@@ -28,6 +29,11 @@ public class Transform2D {
 	 */
 	public static void scale(double[] x, double[] y, double alpha) 
 	{
+		//Until the length of the array is met, each intermittent value is multiplied by alpha.
+		for (int i = 0; i < x.length; i++) {
+			x[i] = alpha * x[i];
+			y[i] = alpha * y[i];
+		}
 		
 	}
 	
@@ -37,6 +43,11 @@ public class Transform2D {
 	 */
 	public static void translate (double[] x, double[] y, double dx, double dy) 
 	{
+		//For each index in the arrays, dx and dy are added to the existing points.
+		for (int i = 0; i < x.length; i++) {
+			x[i] = dx + x[i];
+			y[i] = dy + y[i];
+		}
 		
 	}
 	
@@ -47,6 +58,18 @@ public class Transform2D {
 	public static void rotate (double[] x, double[] y, double theta) 
 	{
 		
+		//Calculates the appropriate values for cos and sin of theta.
+		double cosRot = Math.cos(theta);
+		double sinRot = Math.sin(theta);
+		
+		//Loops through each value to calculate the new X and Y by subtracting or adding
+		//sine and cosine values.
+		for (int i = 0; i < x.length; i++) {
+		double x0 = x[i];
+		double y0 = y[i];
+		x[i] = (cosRot * x0) - (sinRot * x0);
+		y[i] = (cosRot * y0) + (sinRot * y0);
+		}
 	}
 	
 	/**
