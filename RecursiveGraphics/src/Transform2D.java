@@ -58,17 +58,17 @@ public class Transform2D {
 	public static void rotate (double[] x, double[] y, double theta) 
 	{
 		
-		//Calculates the appropriate values for cos and sin of theta.
-		double cosRot = Math.cos(theta);
-		double sinRot = Math.sin(theta);
+		//Calculates appropriate values for cos and sin of theta by converting from angle to rads.
+		double cosRot = Math.cos(Math.toRadians(theta));
+		double sinRot = Math.sin(Math.toRadians(theta));
 		
 		//Loops through each value to calculate the new X and Y by subtracting or adding
 		//sine and cosine values.
 		for (int i = 0; i < x.length; i++) {
-		double x0 = x[i];
-		double y0 = y[i];
-		x[i] = (cosRot * x0) - (sinRot * y0);
-		y[i] = (sinRot * x0) + (cosRot * y0);
+		double [] x0 = copy(x);
+		double[] y0 = copy(y);
+		x[i] = (cosRot * x0[i]) - (sinRot * y0[i]);
+		y[i] = (sinRot * x0[i]) + (cosRot * y0[i]);
 		}
 	}
 	
